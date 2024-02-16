@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
 class StartPage extends StatelessWidget {
-  const StartPage({super.key});
+  const StartPage(this.startQuiz, {super.key});
+  
+  final void Function() startQuiz;
 
+  
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -28,10 +31,8 @@ class StartPage extends StatelessWidget {
             height: 25,
           ),
           OutlinedButton.icon(
-            onPressed: () {},
-            
+            onPressed: startQuiz,
             style: OutlinedButton.styleFrom(
-              
               side: const BorderSide(
                 width: 1.0,
                 color: Colors.white,
@@ -42,8 +43,8 @@ class StartPage extends StatelessWidget {
                 color: Colors.white,
               ),
             ),
-            label: const Text('Start Quiz!'),
             icon: const Icon(Icons.arrow_circle_right),
+            label: const Text('Start Quiz!'),
           ),
         ],
       ),
